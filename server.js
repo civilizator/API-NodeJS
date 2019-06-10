@@ -5,10 +5,12 @@ const app = express();
 
 const port = 8000;
 
-app.use(bodyParser.urlencoded({msExtendedCode: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
-require('./app/routes')(app, {});
+
+require('./app/routes/note_routes')(app, {});
 
 app.listen(port, () => {
-  console.log('We are live on ' + port);
+    console.log('We are live on ' + port);
 });
