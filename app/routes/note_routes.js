@@ -2,7 +2,6 @@ module.exports = function (app, db) {
     app.post('/notes', (req, res) => {
         // console.log(req.body);
         // res.send('Hello');
-
         const note = {
             text: req.body.body,
             title: req.body.title,
