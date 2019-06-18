@@ -2,9 +2,8 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const app = express();
-const dbUrl = require('./config/db');
+const dbUrl = require('./db');
 
-const port = 8000;
 
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,9 +15,7 @@ MongoClient.connect(dbUrl.url, {useNewUrlParser: true } , (err, database) => {
 
     const db = database.db("parent");
 
-    require('./app/routes')(app, db);
-
-    app.listen(port, () => {
-        console.log(`We are live on: ${port}`);
-    });
+    require('./routes')(app, db);
 });
+
+module.exports = app;
