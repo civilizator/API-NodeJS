@@ -1,6 +1,6 @@
 const noteRoutes = require('./note_routes');
 
-module.exports = function(app, db) {
+module.exports = (app, db) => {
   noteRoutes(app, db);
 };
 

@@ -18,7 +18,8 @@
   "homepage": "https://github.com/civilizator/API-NodeJS#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.2.7"
+    "mongodb": "^3.2.7",
+    "npm": "^6.9.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

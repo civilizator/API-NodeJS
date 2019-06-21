@@ -5,7 +5,7 @@ const app = express();
 const dbUrl = require('./db');
 
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 MongoClient.connect(dbUrl.url, {useNewUrlParser: true } , (err, database) => {
